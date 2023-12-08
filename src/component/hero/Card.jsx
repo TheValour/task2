@@ -2,7 +2,7 @@ import React from "react";
 import { useSharedState } from '../context/UserContext';
 
 export default function Card({user}){
-    const { setUserId } = useSharedState();
+    const { setUserId, currId } = useSharedState();
 
     const onClickHandler = (id) =>{
         setUserId(id);
@@ -10,10 +10,10 @@ export default function Card({user}){
 
     return (
         <div key={user.createdAt} onClick={() => onClickHandler(user.id)}
-            className='my-2 border border-slate-300 flex p-1 cursor-pointer bg-gray-100'>
+            className={`overflow-ellipsis my-2 border border-slate-300 flex p-1 cursor-pointer bg-gray-100 ${user.id === currId?'bg-blue-200':''}`}>
             
             <img src={user.avatar} alt="img" className="w-10 mr-2"/>
-            <h2>{user.profile.username}</h2>
+            <h2 className="w-7/12 overflow-ellipsis">{user.profile.username}</h2>
         </div>
     )
 };

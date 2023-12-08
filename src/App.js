@@ -6,7 +6,7 @@ import Users from './component/hero/Users';
 function App() {
   return (
     <UserContextProvider>
-      <div className="App w-screen flex">
+      <div className="App flex w-screen bg-blue-50">
         <Users />
         <Detail />
       </div>

@@ -7,7 +7,6 @@ export const UserContextProvider = ({ children }) => {
 
   const setUserId = (val) => {
     setCurrId(val);
-    console.log(val)
   };
 
   return (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Card from './Card';
+import Loader from './Loader';
 
 export default function Users() {
   const [data, setData] = useState(null);
@@ -26,11 +27,11 @@ export default function Users() {
   }, []);
 
   return (
-    <div className='w-4/12 h-screen overflow-scroll no-scrollbar'>
-      <h1 className='w-4/12  bg-gray-400 flex items-center justify-center p-3 text-xl font-bold fixed z-3'>API Data</h1>
+    <div className='w-4/12 h-screen overflow-scroll no-scrollbar ml-2'>
+      <h1 className='w-4/12  bg-gray-400 text-center py-3 text-xl font-bold fixed '>API Data</h1>
       <div className='mt-16'>
-        {loading && <p>Loading...</p>}
-        {error && <p>Error: {error.message}</p>}
+        {loading && <Loader/>}
+        {error && <p className='text-red-400 font-xl'>Error: {error.message}</p>}
 
         {data && data.map((user) => <Card key={user.createdAt} user={user} />)}
       </div>

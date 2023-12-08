@@ -3,10 +3,10 @@ import axios from 'axios';
 
 import DetailCard from './DetailCard';
 import { useSharedState } from '../context/UserContext';
+import Loader from './Loader';
 
 export default function Detail() {
   const { currId } = useSharedState();
-  console.log("DetailPage", currId)
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -32,10 +32,13 @@ export default function Detail() {
   }, [currId]);
 
   return (
-    <div className="bg-white p-6 m-4 rounded-md shadow-md w-6/12">
-        <h2 className='bg-gray-100 p-2 mb-3 text-center'>User Detail</h2>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
+    <div className="bg-white p-6 m-4 rounded-md shadow-md w-7/12 flex items-center flex-col ml-3 ">
+        <h2 className='bg-gray-100 p-2 mb-3 text-center w-11/12 text-xl font-bold'>User Detail</h2>
+
+        <div className='w-12/12 flex items-center justify-center'>
+            {loading && <Loader/>}
+            {error && <p className='text-red-400 text-2xl'>Error: {error}</p>}
+        </div>
 
       {user && <DetailCard user={user}/> }
     </div>
