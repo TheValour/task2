@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Work+Sans&display=swap');
+
+.App {
+  overflow-x: hidden;
+  font-family: 'Comfortaa', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  width: 100dvw;
+  height: 100dvh;
+}
