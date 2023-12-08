@@ -9,6 +9,9 @@ export default function Users() {
 
   useEffect(() => {
     const fetchData = async () => {
+        setData(null)
+        setLoading(true)
+        setError(null)
       try {
         const response = await axios.get('https://602e7c2c4410730017c50b9d.mockapi.io/users');
         setData(response.data);
@@ -23,12 +26,14 @@ export default function Users() {
   }, []);
 
   return (
-    <div className='w-4/12 h-screen overflow-scroll no-scrollbar bg-green-100'>
-      <h1>API Data:</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error.message}</p>}
+    <div className='w-4/12 h-screen overflow-scroll no-scrollbar'>
+      <h1 className='w-4/12  bg-gray-400 flex items-center justify-center p-3 text-xl font-bold fixed z-3'>API Data</h1>
+      <div className='mt-16'>
+        {loading && <p>Loading...</p>}
+        {error && <p>Error: {error.message}</p>}
 
-      {data && data.map((user) => <Card key={user.createdAt} user={user} />)}
+        {data && data.map((user) => <Card key={user.createdAt} user={user} />)}
+      </div>
     </div>
   );
 }

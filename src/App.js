@@ -1,14 +1,17 @@
 import './App.css'
-import { Navbar, Hero } from './component';
+import Detail from './component/hero/Detail'
+import { UserContextProvider } from './component/context/UserContext'
+import Users from './component/hero/Users';
 
 function App() {
   return (
-    <div className="App">
-      {/* <Navbar/> */}
-      <Hero/>
-    </div>
+    <UserContextProvider>
+      <div className="App w-screen flex">
+        <Users />
+        <Detail />
+      </div>
+    </UserContextProvider>
   );
 }
 
 export default App;
-

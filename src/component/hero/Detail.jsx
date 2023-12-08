@@ -32,7 +32,8 @@ export default function Detail() {
   }, [currId]);
 
   return (
-    <div className="bg-white p-6 m-4 rounded-md shadow-md w-7/12">
+    <div className="bg-white p-6 m-4 rounded-md shadow-md w-6/12">
+        <h2 className='bg-gray-100 p-2 mb-3 text-center'>User Detail</h2>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
 
