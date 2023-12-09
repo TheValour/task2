@@ -7,3 +7,20 @@
   width: 100dvw;
   height: 100dvh;
 }
+
+@media screen and (max-width: 550px) {
+  #show {
+    width: 95%;
+  }
+  #notShow {
+    display: none;
+  }
+  #api-data{
+    width: 95%;
+  }
+  #backButton {
+    display: block;
+  }
+}
+
+

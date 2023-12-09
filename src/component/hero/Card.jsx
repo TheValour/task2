@@ -2,9 +2,10 @@ import React from "react";
 import { useSharedState } from '../context/UserContext';
 
 export default function Card({user}){
-    const { setUserId, currId } = useSharedState();
+    const { setUserId, currId, setShowScreen } = useSharedState();
 
     const onClickHandler = (id) =>{
+        setShowScreen(1);
         setUserId(id);
     }
 
