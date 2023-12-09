@@ -7,6 +7,9 @@
   width: 100dvw;
   height: 100dvh;
 }
+#bg-blue {
+  background-color: rgb(173, 205, 245);;
+}
 
 @media screen and (max-width: 600px) {
   #show {

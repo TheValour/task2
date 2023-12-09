@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 function DetailCard({user}) {
     const isoDate = new Date(user.createdAt);
     const formattedDate = isoDate.toLocaleDateString("en-US", {
@@ -23,7 +26,11 @@ function DetailCard({user}) {
         <div className="text-gray-700">
             <p className='bg-gray-100 m-2 p-2'> <span className="text-gray-500 text-sm">full name: </span> {user.profile.firstName} 
             {user.profile.lastName} </p>
-            <p className='bg-gray-100 m-2 p-2 text-blue-900 h-auto'> <span className="text-gray-500 text-sm">email:</span> {user.profile.email} </p>
+
+            <p className='bg-gray-100 m-2 p-2 text-blue-800 h-auto cursor-pointer'> 
+            <span className="w-5 h-5 text-gray-500 mr-2"><FontAwesomeIcon icon={faEnvelope} /> </span>
+            {user.profile.email} </p>
+
             <p className='bg-gray-100 m-2 p-2'> <span className="text-gray-600 text-sm  ">joined At:</span> {formattedDate} </p>
         </div>
   </div>
