@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Card from './Card';
-import Loader from './Loader';
+import Loader from '../loader/Loader';
 
 import { useSharedState } from '../context/UserContext';
 

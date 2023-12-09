@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import DetailCard from './DetailCard';
 import { useSharedState } from '../context/UserContext';
-import Loader from './Loader';
+import Loader from '../loader/Loader';
 import BackButton from './BackButton';
 
 export default function Detail() {
